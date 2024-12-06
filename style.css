@@ -5,38 +5,20 @@ background-color: #000000;
 font-family: 'Dancing Script', cursive;
 }
 
+/* Titulos de las alertas */
+
 .titulo01{
   color: white;
 }
 
-.text-html{
-  color: rgb(0, 141, 141);
-  background-color: #fff;
-}
-
-
-.titulo{
-  color: rgba(255, 255, 255, 0.685);
-  font-family: 'Dancing Script', cursive;
-}
-
 .titulo02{
   color: #000000;
+  text-shadow: 2px 2px 0 #FFFFFF, -2px -2px 0 #FFFFFF, 2px -2px 0 #FFFFFF, -2px 2px 0 #FFFFFF;
 }
 
-.navidad{
-  width: 150px;
-}
+/* para el contenedor amor  */
 
-.wave1 {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background: transparent;
-  top: 135.2%;
-}
-
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +28,245 @@ font-family: 'Dancing Script', cursive;
   justify-content: center;
 }
 
+.contenedor01{
+  position: absolute;
+  height: 30vh;
+  margin-top: 20%;
+}
+
+/* Reproductor de música navideña */
+.player .info {
+  position: absolute;
+  height: 80px;
+  margin-top: -10px;
+  opacity: 0;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 15px 5px 110px;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+
+.player .info .artist,
+.player .info .name {
+  display: block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.player .info .artist {
+  color: #222;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-left: -30px;
+}
+
+.player .info .name {
+  color: #4d4646;
+  font-size: 12px;
+  margin-bottom: 8px;
+  margin-left: -15px;
+}
+
+.player .info .progress-bar {
+  background-color: white;
+  width: 90%;
+  height: 4px;
+  position: relative;
+}
+
+.player .info .progress-bar .bar {
+  position: relative;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #5eff1e;
+  width: 0%;
+  height: 100%;
+  transition: width 0.2s linear;
+}
+
+.player .info.active {
+  top: -60px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.player .control-panel {
+  position: relative;
+  background-color: #816666;
+  border-radius: 15px;
+  width: 300px;
+  height: 75px;
+  z-index: 5;
+  box-shadow: 0 20px 20px 5px rgba(245, 183, 183, 0.3);
+}
+
+.player .control-panel .album-art {
+  position: absolute;
+  left: 20px;
+  top: -25px;
+  height: 90px;
+  width: 90px;
+  box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0);
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+
+.img1 {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+.click-text { 
+  text-align: center; 
+  margin-top: -25px; 
+  font-size: 13px; 
+  color: white; 
+  font-weight: bold; 
+} 
+
+.click-text .arrow { 
+  display: block; 
+  font-size: 10px; 
+  animation: flecha 2s ease-in-out infinite;
+}
+
+@keyframes flecha{
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0.5;
+    transform: translateX(-10px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Controles del reproductor */
+
+.player .control-panel .album-art::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+}
+
+.player .control-panel.active .album-art {
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0).2;
+  transform: scale(1.2);
+  transition: all o.5s ease;
+}
+
+.player .control-panel .controls {
+  display: flex;
+  justify-content: flex-end;
+  height: 80px;
+  padding: 0 15px
+}
+
+.player .control-panel .controls .play {
+  width: 55px;
+  height: auto;
+  border-radius: 10px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  margin: 5px 0;
+  background-color: #816666;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+}
+
+
+.player .control-panel .controls .prev,
+.player .control-panel .controls .next {
+  width: 55px;
+  height: auto;
+  border-radius: 10px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  margin: 5px 0;
+  background-color: #816666;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+}
+
+.player .control-panel .controls .prev:hover,
+.player .control-panel .controls .play:hover,
+.player .control-panel .controls .next:hover {
+  background-color: #928b8b83;
+  transition: background-color 0.3s ease;
+}
+
+.player .control-panel .controls .prev {
+  background-image: url(img/anterior.png);
+}
+
+.player .control-panel .controls .play {
+  background-image: url(img/play.png);
+}
+
+.player .control-panel .controls .next {
+  background-image: url(img/siguiente.png);
+}
+
+.player .control-panel.active .controls .play {
+  background-image: url(img/stop.png);
+}
+
+.titulo{
+  color: rgba(255, 255, 255, 0.685);
+  font-family: 'Dancing Script', cursive;
+}
+
+/*  Contenedor de luces con el conteo regresivo amor */
+
 .container_luces{
   margin-top: -20px;
+}
+
+.box1{
+  background-color: rgb(245, 35, 35);
+  border-top: 3px solid #fff;
+  animation: esfera 2s ease-in-out infinite;
+}
+
+.box2{
+  border-right: 3px solid #fff;
+  animation: esfera 2s ease-in-out infinite;
+  background-color: rgb(46, 230, 46);
+}
+
+.box3{
+  border-bottom: 3px solid #fff;
+  animation: esfera 2s ease-in-out infinite;
+  background-color: rgb(251, 255, 0);
+}
+
+.box4{
+  border-left: 3px solid #fff;
+  animation: esfera 2s ease-in-out infinite;
+  background-color: rgb(192, 59, 192);
 }
 
 .card{
@@ -85,30 +304,6 @@ font-family: 'Dancing Script', cursive;
   margin-bottom: 0.5rem;
 }
 
-.box1{
-  background-color: rgb(245, 35, 35);
-  border-top: 3px solid #fff;
-  animation: esfera 2s ease-in-out infinite;
-}
-
-.box2{
-  border-right: 3px solid #fff;
-  animation: esfera 2s ease-in-out infinite;
-  background-color: rgb(46, 230, 46);
-}
-
-.box3{
-  border-bottom: 3px solid #fff;
-  animation: esfera 2s ease-in-out infinite;
-  background-color: rgb(251, 255, 0);
-}
-
-.box4{
-  border-left: 3px solid #fff;
-  animation: esfera 2s ease-in-out infinite;
-  background-color: rgb(192, 59, 192);
-}
-
 @keyframes esfera{
   0% {
     opacity: 1;
@@ -122,13 +317,38 @@ font-family: 'Dancing Script', cursive;
   }
 }
 
+/* Gif de navidad */
+
+.navidad{
+  width: 150px;
+}
+
+.gifText {
+  color: white;
+  font-size: 22px;
+}
+
+.text-html{
+  font-size: 20px;
+  color: rgb(0, 141, 141);
+  background-color: #fff;
+  -webkit-text-stroke: 0.5px #000000;
+}
+
+.ColorText {
+  color: #000000;
+}
+
+
+/* Botones */
+
 .botOn{
   height: 15vh;
 }
 
 .sorpresa{
   font-family: 'Pacifico', cursive;
-  background-color: #72f73400;
+  background-color: #ccc;
   color: #000000;
   letter-spacing: 1.5px;
   width: 250px;
@@ -143,819 +363,394 @@ font-family: 'Dancing Script', cursive;
   box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
 }
 
-.contenedor01{
-  position: absolute;
-  height: 30vh;
-  margin-top: 20%;
+/* boton 2 */
+
+.sorpresa2{
+  font-family: 'Pacifico', cursive;
+  background-color: #72f73400;
+  color: #000000;
+  letter-spacing: 1.5px;
+  width: 250px;
+  margin-top: 0px;
+  border-color: #ffffff;
+  border-radius: 20px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
-.player .info{
-  position: absolute;
-  height: 80px;
-  margin-top: -10px;
-  opacity: 0;
-  left: 10px;
-  right: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 5px 15px 5px 110px;
-  border-radius: 25px;
-  transition: all 0.5s ease;
+.sorpresa2.active:hover{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
 }
 
-.player .info .artist,
-.player .info .name{
-  display: block;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+/* Nieve acumulada */
 
-.player .info .artist{
-  color: #222;
-  font-size: 16px;
-  margin-bottom: 5px;
-  margin-left: -30px;
-}
-
-.player .info .name{
-  color: #4d4646;
-  font-size: 12px;
-  margin-bottom: 8px;
-  margin-left: -15px;
-}
-
-.player .info .progress-bar{
-  background-color: white;
-  width: 90%;
-  height: 4px;
+.wave1 {
   position: relative;
-}
-
-.player .info .progress-bar .bar{
-  position: relative;
-  left: 0;
-  top: 0;
   bottom: 0;
-  background-color: #5eff1e;
-  width: 0%;
-  height: 100%;
-  transition: width 0.2s linear;
+  width: 100%;
+  background: transparent;
+  top: 135.2%;
 }
 
-.player .info.active{
-  top: -60px;
-  opacity: 1;
-  transition: all 0.5s ease;
-}
+/* Copos de nieve  */
 
-.player .control-panel{
-  position: relative;
-  background-color: #816666;
-  border-radius: 15px;
-  width: 300px;
-  height: 75px;
-  z-index: 5;
-  box-shadow: 0 20px 20px 5px rgba(245, 183, 183, 0.3);
-}
-
-.player .control-panel .album-art{
+.snow {
   position: absolute;
-  left: 20px;
-  top: -25px;
-  height: 90px;
-  width: 90px;
-  box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0);
-  transform: scale(1);
-  transition: all 0.5s ease;
-}
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 100;
 
-.img1{
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  margin-left: -50px;
-  cursor: pointer;
-}
-
-.player .control-panel .album-art::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80px;
-}
-
-.player .control-panel.active .album-art{
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0).2;
-  transform: scale(1.2);
-  transition: all o.5s ease;
-}
-
-.player .control-panel .controls{
-  display: flex;
-  justify-content: flex-end;
-  height: 80px;
-  padding: 0 15px
-}
-
-.player .control-panel .controls .play{
-  width: 55px;
-  height: auto;
-  border-radius: 10px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 50px;
-  margin: 5px 0;
-  background-color: #816666;
-  cursor: pointer;
-  transition: background-color 0.3 ease;
-}
-
-
-.player .control-panel .controls .prev,
-.player .control-panel .controls .next{
-  width: 55px;
-  height: auto;
-  border-radius: 10px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  margin: 5px 0;
-  background-color: #816666;
-  cursor: pointer;
-  transition: background-color 0.3 ease;
-}
-
-.player .control-panel .controls .prev:hover,
-.player .control-panel .controls .play:hover,
-.player .control-panel .controls .next:hover{
-  background-color: #928b8b83;
-  transition: background-color 0.3s ease;
-}
-
-.player .control-panel .controls .prev{
-  background-image: url(img/anterior.png);
-}
-
-.player .control-panel .controls .play{
-  background-image: url(img/play.png);
-}
-
-.player .control-panel .controls .next{
-  background-image: url(img/siguiente.png);
-}
-
-.player .control-panel.active .controls .play{
-  background-image: url(img/stop.png);
 }
 
 .snow1 {
-  position: absolute;
   top: -10px;
   left: 85%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 5.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow2 {
-  position: absolute;
   top: -10px;
   left: 5%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 4s ease-in infinite;
-  z-index: 100;
 }
 
 .snow3 {
-  position: absolute;
   top: -5px;
   left: 15%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 6s ease-in infinite;
   opacity: 0.5;
-  z-index: 100;
 }
 
 .snow4 {
-  position: absolute;
   top: -10px;
   left: 20%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 3s ease-in infinite;
-  z-index: 100;
 }
 
 .snow5 {
-  position: absolute;
   top: -5px;
   left: 25%;
-  height: 10px;
-  width: 10px;
   opacity: 0.2;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow6 {
-  position: absolute;
   top: -10px;
   left: 30%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 7.3s ease-in infinite;
-  z-index: 100;
 }
 
 .snow7 {
-  position: absolute;
   top: -5px;
   left: 10%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 3.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow8 {
-  position: absolute;
   top: 7px;
   left: 18%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 8.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow9 {
-  position: absolute;
   top: -10px;
   left: 2%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow10 {
-  position: absolute;
   top: -10px;
   left: 23%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 15s ease-in infinite;
-  z-index: 100;
 }
 
 .snow11 {
-  position: absolute;
   top: -3px;
   left: 18%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 17s ease-in infinite;
-  z-index: 100;
 }
 
 .snow12 {
-  position: absolute;
   top: -10px;
   left: 27%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 11.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow13 {
-  position: absolute;
   top: -10px;
   left: 11%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 12.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow14 {
-  position: absolute;
   top: -10px;
   left: 32%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 4.5s ease-in infinite;
-  z-index: 100;
 }
 
 .snow15 {
-  position: absolute;
   top: -10px;
   left: 35%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 13s ease-in infinite;
-  z-index: 100;
 }
 
 .snow16 {
-  position: absolute;
   top: -20px;
   left: 37%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 10.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow17 {
-  position: absolute;
   top: -10px;
   left: 39%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 7.4s ease-in infinite;
-  z-index: 100;
 }
 
 .snow18 {
-  position: absolute;
   top: -10px;
   left: 42%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 15.4s ease-in infinite;
-  z-index: 100;
 }
 
 .snow19 {
-  position: absolute;
   top: -10px;
   left: 45%;
-  height: 10px;
-  width: 10px;
-  opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
+  opacity: 1;  
   animation: nieve 3.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow20 {
-  position: absolute;
   top: -10px;
   left: 48%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 5.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow21 {
-  position: absolute;
   top: -10px;
   left: 50%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 3.6s ease-in infinite;
-  z-index: 100;
 }
 
 .snow22 {
-  position: absolute;
   top: -10px;
   left: 52%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 7.5s ease-in infinite;
-  z-index: 100;
 }
 
 .snow23 {
-  position: absolute;
   top: -10px;
   left: 55%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 15.3s ease-in infinite;
-  z-index: 100;
 }
 
 .snow24 {
-  position: absolute;
   top: -10px;
   left: 57%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 16.7s ease-in infinite;
-  z-index: 100;
 }
 
 .snow25 {
-  position: absolute;
   top: -10px;
   left: 59%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 2.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow26 {
-  position: absolute;
   top: -10px;
   left: 52%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 14.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow27 {
-  position: absolute;
   top: -10px;
   left: 23%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 16.4s ease-in infinite;
-  z-index: 100;
 }
 
 .snow28 {
-  position: absolute;
   top: -10px;
   left: 35%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 2.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow29 {
-  position: absolute;
   top: -10px;
   left: 54%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow30 {
-  position: absolute;
   top: -10px;
   left: 56%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 2.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow31 {
-  position: absolute;
   top: -10px;
   left: 58%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 12.2s ease-in infinite;
-  z-index: 100;
 }
 
 .snow32 {
-  position: absolute;
   top: -10px;
   left: 59%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 10.3s ease-in infinite;
-  z-index: 100;
 }
 
 .snow33 {
-  position: absolute;
   top: -10px;
   left: 60%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 4.7s ease-in infinite;
-  z-index: 100;
 }
 
 .snow34 {
-  position: absolute;
   top: -10px;
   left: 63%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 7.7s ease-in infinite;
-  z-index: 100;
 }
 
 .snow35 {
-  position: absolute;
   top: -10px;
   left: 65%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 13.6s ease-in infinite;
-  z-index: 100;
 }
 
 .snow36 {
-  position: absolute;
   top: -10px;
   left: 68%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 9.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow37 {
-  position: absolute;
   top: -10px;
   left: 70%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 14.4s ease-in infinite;
-  z-index: 100;
 }
 
 .snow38 {
-  position: absolute;
   top: -10px;
   left: 73%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 3.6s ease-in infinite;
-  z-index: 100;
 }
 
 .snow39 {
-  position: absolute;
   top: -10px;
   left: 75%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 18.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow40 {
-  position: absolute;
   top: -10px;
   left: 78%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 10.1s ease-in infinite;
-  z-index: 100;
 }
 
 .snow41 {
-  position: absolute;
   top: -10px;
   left: 80%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 14.5s ease-in infinite;
-  z-index: 100;
 }
 
 .snow42 {
-  position: absolute;
   top: -10px;
   left: 83%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 12.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow43 {
-  position: absolute;
   top: -10px;
   left: 88%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 2.7s ease-in infinite;
-  z-index: 100;
 }
 
 .snow44 {
-  position: absolute;
   top: -10px;
   left: 90%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 9.5s ease-in infinite;
-  z-index: 100;
 }
 
 .snow45 {
-  position: absolute;
   top: -10px;
   left: 93%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 14.6s ease-in infinite;
-  z-index: 100;
 }
 
 .snow46 {
-  position: absolute;
   top: -10px;
   left: 95%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 15.9s ease-in infinite;
-  z-index: 100;
 }
 
 .snow47 {
-  position: absolute;
   top: -10px;
   left: 98%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 7.3s ease-in infinite;
-  z-index: 100;
 }
 
 .snow48 {
-  position: absolute;
   top: -10px;
   left: 97%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 8.8s ease-in infinite;
-  z-index: 100;
 }
 
 .snow49 {
-  position: absolute;
   top: -10px;
   left: 82%;
-  height: 10px;
-  width: 10px;
   opacity: 1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 3.5s ease-in infinite;
-  z-index: 100;
 }
 
 .snow50 {
-  position: absolute;
   top: -10px;
   left: 88%;
-  height: 10px;
-  width: 10px;
   opacity: 0.1;
-  background-color: #fff;
-  border-radius: 50%;
   animation: nieve 17.8s ease-in infinite;;
-  z-index: 100;
 }
+
+/* Animación para la nieve amor */
 
 @keyframes nieve {
   0% {
@@ -965,6 +760,8 @@ font-family: 'Dancing Script', cursive;
     transform: translateY(175vh);
   }
 }
+
+/* Responsivo */
 
 @media screen and (max-width: 770px){
   .contenedor01{
@@ -985,6 +782,6 @@ font-family: 'Dancing Script', cursive;
   }
   .wave1 {
     background: transparent;
-    margin-top: -35.2%;
+    margin-top: -20.2%;
   }
 }
