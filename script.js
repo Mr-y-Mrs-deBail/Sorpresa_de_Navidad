@@ -46,11 +46,12 @@ var x = setInterval(function() {
                 html: "Tu lindo regalo de Navidad soy YO🎀, pero tengo otra linda sorpresa para ti mi amor🎁. <br> Espero que te súper encante y ojalá la próxima Navidad sí podamos pasarla juntos mi todo. <br> ¡Feliz Navidad, mi vida🎄! <br> Recuerda que lo más lindo es que seguimos juntos, otro año más ¡Uyyyyyy! y estaremos juntos por toda la eternidad mi amor! <br> ❄️Te amoOOOOOOOOOO☃️ y siempre te amaré cada milisegundo más y más❤️.",      
                 position: "center",
                 background: "black",
+                color: "white",
                 confirmButtonText: 'Continuar',
-                confirmButtonColor: 'skyblue',
-                imageUrl: 'img/MV.png',
+                confirmButtonColor: 'purple',
+                imageUrl: 'img/MV2.png',
                 imageWidth: '250px',
-                imageAlt: 'abrazo',
+                imageAlt: 'mv',
                 allowOutsideClick: false,
                 customClass: {
                     title: 'titulo01'
