@@ -339,7 +339,6 @@ font-family: 'Dancing Script', cursive;
   color: #000000;
 }
 
-
 /* Botones */
 
 .botOn{
@@ -367,7 +366,7 @@ font-family: 'Dancing Script', cursive;
 
 .sorpresa2{
   font-family: 'Pacifico', cursive;
-  background-color: #72f73400;
+  background-color: #ccc;
   color: #000000;
   letter-spacing: 1.5px;
   width: 250px;
@@ -378,6 +377,25 @@ font-family: 'Dancing Script', cursive;
 }
 
 .sorpresa2.active:hover{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
+}
+
+/* Botón 3 */
+
+.sorpresa3{
+  font-family: 'Pacifico', cursive;
+  background-color: #72f73400;
+  color: #000000;
+  letter-spacing: 1.5px;
+  width: 250px;
+  margin-top: 0px;
+  border-color: #ffffff;
+  border-radius: 20px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.sorpresa3.active:hover{
   background-color: rgb(255, 255, 255);
   box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
 }
@@ -757,7 +775,7 @@ font-family: 'Dancing Script', cursive;
     transform: translateY(0);
   }
   100% {
-    transform: translateY(175vh);
+    transform: translateY(185vh);
   }
 }
 
@@ -782,6 +800,14 @@ font-family: 'Dancing Script', cursive;
   }
   .wave1 {
     background: transparent;
-    margin-top: -20.2%;
+    margin-top: -5.2%;
+  }
+  @keyframes nieve {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(230vh);
+    }
   }
 }

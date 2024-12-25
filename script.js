@@ -37,7 +37,7 @@ var x = setInterval(function() {
 
         //Sorpesa disponible al terminar la cuenta regresiva
         
-        var boton = document.getElementById("botón2");
+        var boton = document.getElementById("botón3");
         boton.disabled = false;
         boton.classList.add("active"); 
         boton.onclick = function() {

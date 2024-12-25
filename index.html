@@ -175,7 +175,10 @@
         <button id="botón1" class="btn btn-block sorpresa"><strong>Sorpresa Disponible!</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-        <button id="botón2" class="btn btn-block sorpresa2"><strong>Próximamente</strong></button>
+        <button id="botón2" class="btn btn-block sorpresa2"><strong>Sorpresa Disponible!</strong></button>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
+        <button id="botón3" class="btn btn-block sorpresa3"><strong>Próximamente</strong></button>
       </div>
     </div>
   </div>
@@ -264,6 +267,32 @@
         .then((willContinue) => {
           if (willContinue) {
           window.location.href = '//mr-y-mrs-debail.github.io/Feliz_Navidad/';
+        }
+      });
+    });
+  </script>
+
+  <script>
+    document.getElementById("botón2").addEventListener("click", function() {
+      Swal.fire({
+        title: "¡Merry Christmas Mi Amor🌟!",
+        html: "Tu lindo regalo de Navidad soy YO🎀, pero tengo otra linda sorpresa para ti mi amor🎁. <br> Espero que te súper encante y ojalá la próxima Navidad sí podamos pasarla juntos mi todo. <br> ¡Feliz Navidad, mi vida🎄! <br> Recuerda que lo más lindo es que seguimos juntos, otro año más ¡Uyyyyyy! y estaremos juntos por toda la eternidad mi amor! <br> ❄️Te amoOOOOOOOOOO☃️ y siempre te amaré cada milisegundo más y más❤️.",      
+        position: "center",
+        background: "black",
+        color: "white",
+        confirmButtonText: 'Continuar',
+        confirmButtonColor: 'purple',
+        imageUrl: 'img/MV2.png',
+        imageWidth: '250px',
+        imageAlt: 'mv',
+        allowOutsideClick: false,
+        customClass: {
+          title: 'titulo01'
+        }
+      })
+      .then((willContinue) => {
+        if (willContinue) {
+          window.location.href = '//mr-y-mrs-debail.github.io/Merry-Christmas-Amor/';
         }
       });
     });
