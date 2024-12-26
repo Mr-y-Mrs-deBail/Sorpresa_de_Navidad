@@ -807,7 +807,7 @@ font-family: 'Dancing Script', cursive;
       transform: translateY(0);
     }
     100% {
-      transform: translateY(210vh);
+      transform: translateY(190vh);
     }
   }
 }
