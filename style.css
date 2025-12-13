@@ -343,6 +343,7 @@ font-family: 'Dancing Script', cursive;
 
 .botOn{
   height: 15vh;
+  margin-bottom: 35px;
 }
 
 .sorpresa{
@@ -395,7 +396,32 @@ font-family: 'Dancing Script', cursive;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+.sorpresa3.active {
+  background-color: #ccc; 
+  color: #000000;
+}
+
 .sorpresa3.active:hover{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
+}
+
+/* Botón 4 */
+
+.sorpresa4{
+  display: none;
+  font-family: 'Pacifico', cursive;
+  background-color: #72f73400;
+  color: #000000;
+  letter-spacing: 1.5px;
+  width: 250px;
+  margin-top: 0px;
+  border-color: #ffffff;
+  border-radius: 20px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.sorpresa4.active:hover{
   background-color: rgb(255, 255, 255);
   box-shadow: 0 2px 20px 5px rgba(183, 212, 245, 0.3);
 }
@@ -404,13 +430,11 @@ font-family: 'Dancing Script', cursive;
 
 .wave1 {
   position: relative;
-  bottom: 0;
   width: 100%;
   background: transparent;
-  top: 135.2%;
 }
 
-/* Copos de nieve  */
+/* Copos de nieve */
 
 .snow {
   position: absolute;
@@ -807,7 +831,7 @@ font-family: 'Dancing Script', cursive;
       transform: translateY(0);
     }
     100% {
-      transform: translateY(195vh);
+      transform: translateY(215vh);
     }
   }
 }
