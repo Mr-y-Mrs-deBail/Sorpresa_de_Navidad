@@ -174,7 +174,7 @@
         <button id="botón2" class="btn btn-block sorpresa2"><strong>Sorpresa Disponible!</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-        <button id="botón3" class="btn btn-block sorpresa3"><strong>Próximamente</strong></button>
+        <button id="botón3" class="btn btn-block sorpresa3"><strong>Sorpresa Disponible</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
         <button id="botón4" class="btn btn-block sorpresa4"><strong>Próximamente</strong></button>
@@ -293,6 +293,32 @@
         if (willContinue) {
           window.location.href = '//mr-y-mrs-debail.github.io/Merry-Christmas-Amor/';
         }
+      });
+    });
+  </script>
+
+    <script>
+    document.getElementById("botón3").addEventListener("click", function() {
+      Swal.fire({
+                    title: "¡Feliz Navidad Mi Amor!🎄",
+                    html: "Mi deseo más grande esta Navidad y todos los días🌟 es tenerte siempre cerca y siempre a mi lado Mi Todo!🎁✨", 
+                    position: "center",
+                    background: "black",
+                    color: "white",
+                    confirmButtonText: 'Continuar',
+                    confirmButtonColor: 'purple',
+                    imageUrl: 'img/MV3.png',
+                    imageWidth: '250px',
+                    imageAlt: 'mv',
+                    allowOutsideClick: false,
+                    customClass: {
+                        title: 'titulo01'
+                    }
+                })
+                .then((willContinue) => {
+                    if (willContinue) {
+                        window.location.href = '//mr-y-mrs-debail.github.io/Merry_Christmas2025/';
+                     }
       });
     });
   </script>

@@ -27,7 +27,7 @@ function startCountdown() {
                 
         if (distance < 0) {
             
-            const boton3 = document.getElementById("botón3");
+            const boton3 = document.getElementById("botón4");
 
             boton3.querySelector('strong').textContent = 'Sorpresa Disponible!';
             boton3.disabled = false;
