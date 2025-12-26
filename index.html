@@ -168,13 +168,13 @@
   <div class="container text-center align-items-center justify-content-center">
     <div class="botOn">
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-        <button id="botón1" class="btn btn-block sorpresa"><strong>Sorpresa Disponible!</strong></button>
+        <button id="botón1" class="btn btn-block sorpresa"><strong>2023</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-        <button id="botón2" class="btn btn-block sorpresa2"><strong>Sorpresa Disponible!</strong></button>
+        <button id="botón2" class="btn btn-block sorpresa2"><strong>2024</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
-        <button id="botón3" class="btn btn-block sorpresa3"><strong>Sorpresa Disponible</strong></button>
+        <button id="botón3" class="btn btn-block sorpresa3"><strong>2025</strong></button>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb-4">
         <button id="botón4" class="btn btn-block sorpresa4"><strong>Próximamente</strong></button>
@@ -225,21 +225,21 @@
 
   <script>
     document.getElementById("img02").addEventListener("click", function() {
-    Swal.fire({
-    title: '¡Ya casi es navidad mi amor!',
-    color: 'black',
-    background: 'url(img/fondo-navidad1.jpg)',
-    html: '<p class="text-html">Portate bien mi amor, sino no recibirás tu lindo regalo. Y si te portas mal te voy a morder😠. <br> ¡buuuu! <br> Te AmoooOOOOO mi súper Todo😍</p>',
-    imageUrl: 'img/amor.png',
-    imageWidth: '250px',
-    imageAlt: 'amor',
-    confirmButtonText: '¡Continuar!',
-    confirmButtonColor: 'skyblue',
-    customClass: { 
-        confirmButton: 'ColorText' 
-      }
-   })
-   });
+      Swal.fire({
+        title: '¡Ya casi es navidad mi amor!',
+        color: 'black',
+        background: 'url(img/fondo-navidad1.jpg)',
+        html: '<p class="text-html">Portate bien mi amor, sino no recibirás tu lindo regalo. Y si te portas mal te voy a morder😠. <br> ¡buuuu! <br> Te AmoooOOOOO mi súper Todo😍</p>',
+        imageUrl: 'img/amor.png',
+        imageWidth: '250px',
+        imageAlt: 'amor',
+        confirmButtonText: '¡Continuar!',
+        confirmButtonColor: 'skyblue',
+        customClass: { 
+          confirmButton: 'ColorText' 
+        }
+      })
+    });
   </script>
 
   <!-- Script para mostrar la alerta de la primera sorpresa  -->
@@ -297,28 +297,28 @@
     });
   </script>
 
-    <script>
+  <script>
     document.getElementById("botón3").addEventListener("click", function() {
       Swal.fire({
-                    title: "¡Feliz Navidad Mi Amor!🎄",
-                    html: "Mi deseo más grande esta Navidad y todos los días🌟 es tenerte siempre cerca y siempre a mi lado Mi Todo!🎁✨", 
-                    position: "center",
-                    background: "black",
-                    color: "white",
-                    confirmButtonText: 'Continuar',
-                    confirmButtonColor: 'purple',
-                    imageUrl: 'img/MV3.png',
-                    imageWidth: '250px',
-                    imageAlt: 'mv',
-                    allowOutsideClick: false,
-                    customClass: {
-                        title: 'titulo01'
-                    }
-                })
-                .then((willContinue) => {
-                    if (willContinue) {
-                        window.location.href = '//mr-y-mrs-debail.github.io/Merry_Christmas2025/';
-                     }
+        title: "¡Feliz Navidad Mi Amor!🎄",
+        html: "Mi deseo más grande esta Navidad y todos los días🌟 es tenerte siempre cerca y siempre a mi lado Mi Todo!🎁✨", 
+        position: "center",
+        background: "black",
+        color: "white",
+        confirmButtonText: 'Continuar',
+        confirmButtonColor: 'purple',
+        imageUrl: 'img/MV3.png',
+        imageWidth: '250px',
+        imageAlt: 'mv',
+        allowOutsideClick: false,
+        customClass: {
+          title: 'titulo01'
+        }
+      })
+      .then((willContinue) => {
+        if (willContinue) {
+          window.location.href = '//mr-y-mrs-debail.github.io/Merry_Christmas2025/';
+        }
       });
     });
   </script>

@@ -1,23 +1,55 @@
-//Fecha de la próxima Navidad <3
 function getNextChristmas() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var nextChristmas = new Date(year, 11, 25);
-    
-    if (now > nextChristmas) {
-        nextChristmas.setFullYear(year + 1);
-    }
+    var nextChristmas = new Date(2026, 11, 25, 0, 0, 0); 
     
     return nextChristmas.getTime();
 }
 
-var countDownDate = getNextChristmas();
-var lastDays, lastHours, lastMinutes, lastSeconds;
+function activarBotonNavidad() {
+    const boton4 = document.getElementById("botón4");
+    if (!boton4) return;
+
+    boton4.querySelector('strong').textContent = 'Sorpresa Disponible!';
+    
+    boton4.classList.remove('sorpresa4');
+    boton4.classList.add('sorpresa3', 'active'); 
+    
+    boton4.style.display = 'block'; 
+
+    boton4.onclick = function() {
+        Swal.fire({
+            title: "Navidad 2026🎄",
+            html: "🌟🎁✨", 
+            position: "center",
+            background: "black",
+            color: "white",
+            confirmButtonText: 'Continuar',
+            confirmButtonColor: 'purple',
+            imageUrl: 'img/MV3.png',
+            imageWidth: '250px',
+            imageAlt: 'mv',
+            allowOutsideClick: false,
+            customClass: {
+                title: 'titulo01'
+            }
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'https://mr-y-mrs-debail.github.io/Merry_Christmas2025/';
+            }
+        });
+    };
+}
+
 var x;
+var lastDays, lastHours, lastMinutes, lastSeconds;
 
 function startCountdown() {
+    var countDownDate = getNextChristmas();
+
     x = setInterval(function() {
-        var now = new Date().getTime();
+        var nowString = new Date().toLocaleString("en-US", {timeZone: "America/Guatemala"});
+        var now = new Date(nowString).getTime();
+        
         var distance = countDownDate - now;
                 
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -25,73 +57,46 @@ function startCountdown() {
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-        if (distance < 0) {
+        if (distance <= 0) {
+            activarBotonNavidad();
             
-            const boton3 = document.getElementById("botón4");
-
-            boton3.querySelector('strong').textContent = 'Sorpresa Disponible!';
-            boton3.disabled = false;
+            document.getElementById("days").innerHTML = "0";
+            document.getElementById("hours").innerHTML = "0";
+            document.getElementById("minutes").innerHTML = "0";
+            document.getElementById("seconds").innerHTML = "0";
             
-            boton3.classList.remove('sorpresa3'); 
-            boton3.classList.add('sorpresa2', 'active'); 
-
-            const boton4 = document.getElementById("botón4");
-            boton4.style.display = 'block'; 
-
-            boton3.onclick = function() {
-                Swal.fire({
-                    title: "¡Feliz Navidad Mi Amor!🎄",
-                    html: "Mi deseo más grande esta Navidad y todos los días🌟 es tenerte siempre cerca y siempre a mi lado Mi Todo!🎁✨", 
-                    position: "center",
-                    background: "black",
-                    color: "white",
-                    confirmButtonText: 'Continuar',
-                    confirmButtonColor: 'purple',
-                    imageUrl: 'img/MV3.png',
-                    imageWidth: '250px',
-                    imageAlt: 'mv',
-                    allowOutsideClick: false,
-                    customClass: {
-                        title: 'titulo01'
-                    }
-                })
-                .then((willContinue) => {
-                    if (willContinue) {
-                        window.location.href = '//mr-y-mrs-debail.github.io/Merry_Christmas2025/';
-                    }
-                });
-            };
-
             clearInterval(x);
-            countDownDate = getNextChristmas();
-
-            startCountdown(); 
-            
             return;
         }
     
-        if (days !== lastDays) {
-            document.getElementById("days").innerHTML = days;
-            lastDays = days;
+        if (days !== lastDays) { 
+            const dEl = document.getElementById("days");
+            if(dEl) dEl.innerHTML = days; 
+            lastDays = days; 
         }
-        if (hours !== lastHours) {
-            document.getElementById("hours").innerHTML = hours;
-            lastHours = hours;
+        if (hours !== lastHours) { 
+            const hEl = document.getElementById("hours");
+            if(hEl) hEl.innerHTML = hours; 
+            lastHours = hours; 
         }
-        if (minutes !== lastMinutes) {
-            document.getElementById("minutes").innerHTML = minutes;
-            lastMinutes = minutes;
+        if (minutes !== lastMinutes) { 
+            const mEl = document.getElementById("minutes");
+            if(mEl) mEl.innerHTML = minutes; 
+            lastMinutes = minutes; 
         }
-        if (seconds !== lastSeconds) {
-            document.getElementById("seconds").innerHTML = seconds;
-            lastSeconds = seconds;
+        if (seconds !== lastSeconds) { 
+            const sEl = document.getElementById("seconds");
+            if(sEl) sEl.innerHTML = seconds; 
+            lastSeconds = seconds; 
         }
+        
     }, 1000);
 }
 
 startCountdown();
 
 //Music <3 ----------------------------------------
+
 class musicPlayer {
     constructor() {
         this.play = this.play.bind(this);

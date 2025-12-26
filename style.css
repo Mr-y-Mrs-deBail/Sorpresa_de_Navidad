@@ -342,7 +342,7 @@ font-family: 'Dancing Script', cursive;
 /* Botones */
 
 .botOn{
-  height: 15vh;
+  height: 19vh;
   margin-bottom: 35px;
 }
 
@@ -404,7 +404,6 @@ font-family: 'Dancing Script', cursive;
 /* Botón 4 */
 
 .sorpresa4{
-  display: none;
   font-family: 'Pacifico', cursive;
   background-color: #72f73400;
   color: #000000;
@@ -819,7 +818,7 @@ font-family: 'Dancing Script', cursive;
   }
   .wave1 {
     background: transparent;
-    margin-top: -5.2%;
+    margin-top: 2%;
   }
   @keyframes nieve {
     0% {
